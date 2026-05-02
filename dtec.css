@@ -1,0 +1,396 @@
+
+ .header-dtec {
+  background: #e6e6e6;
+  position: relative;
+}
+
+
+  .logo{
+    height: 50px;
+    color: #0c0620;
+
+  }
+  .menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+
+  .menu a {
+    text-decoration: none;
+    color: #0c0620;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .menu a:hover, .menu a.ativo {
+    color: #5271ff;
+  }
+
+  /* Menu Mobile*/
+  .menu-mobile {
+    display: none;
+    background: none;
+    border: none;
+    width: 28px;
+    height: 22px;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .menu-mobile::before,
+  .menu-mobile::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #0c0620;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .menu-mobile::before {
+    top: 0;
+    box-shadow: 0 9px 0 #0c0620;
+  }
+
+  .menu-mobile::after {
+    bottom: 0;
+  }
+
+  .menu-mobile.ativo::before {
+    top: 9px;
+    transform: rotate(45deg);
+    box-shadow: none;
+  }
+
+  .menu-mobile.ativo::after {
+    bottom: 9px;
+    transform: rotate(-45deg);
+  }
+
+  .dtec-page {
+    background: #020256;
+    color: #e6e6e6;
+    position: relative;
+    overflow: visible;
+  }
+
+  .faixa-amarela {
+  height: 9px;
+  background: #ecc440;
+}
+
+.faixa-azul {
+  height: 8px;
+  background: #05053f;
+  position: relative; 
+  z-index: 9999;
+}
+
+.faixa-amarela2 {
+  height: 11px;
+  background: #ecc440;
+}
+  
+
+  .dtec-hero {
+    padding: 60px 10px 20px;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .dtec-logo {
+    max-width: 800px;
+    width: 90%;
+    height: auto;
+    animation: fadeInUp 0.8s ease;
+  }
+
+  /*Animação :) */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .dtec-conteudo {
+    padding: 40px 0 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .dtec-conteudo h2 {
+    font-size: 27px;
+    margin-bottom: 35px;
+    color: #fff;
+    animation: fadeInUp 0.8s ease 0.2s backwards;
+  }
+
+  .dtec-bloco {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+    animation: fadeInUp 0.8s ease 0.4s backwards;
+  }
+
+  .dtec-bloco.invertido {
+    flex-direction: row-reverse;
+    animation: fadeInUp 0.8s ease 0.6s backwards;
+  }
+
+  .dtec-img {
+    flex: 0 0 50%;
+  }
+
+  .dtec-img img {
+    width: 100%;
+    height: auto;
+    border: 4px solid #ecc440;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .dtec-img img:hover {
+    transform: scale(1.02);
+  }
+
+  .dtec-texto {
+    flex: 1;
+  }
+
+  .dtec-texto p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #e6e6e6;
+  }
+
+  .dtec-galeria {
+    flex: 0 0 45%;
+    display: flex;
+    gap: 30px;
+  }
+
+  .dtec-galeria img {
+    width: calc(50% - 10px);
+    border: 4px solid #ecc440;
+    border-radius: 12px;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .dtec-galeria img:hover {
+    transform: scale(1.05);
+  }
+
+  .dtec-destaque {
+    margin-top: 80px;
+    animation: fadeInUp 0.8s ease 0.8s backwards;
+  }
+
+  .dtec-destaque h3 {
+    font-size: 27px;
+    margin-bottom: 18px;
+    color: #e6e6e6;
+  }
+
+  .dtec-destaque p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #e6e6e6;
+    margin-bottom: 20px;
+  }
+
+  .btn-link-amarelo {
+    color: #ecc440;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;     
+    display: inline-block;
+  }
+
+  .btn-link-amarelo:hover {
+    color: #e6e6e6;
+    transform: translateX(5px);
+  }
+
+
+  .img-seguidor {
+     position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50px;
+
+  animation: moverHorizontal 5s linear infinite;
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+  footer {
+    background: #e6e6e6;
+    color: #0c0670;
+    padding: 36px 48px 28px;
+  }
+
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .footer-left{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+  }
+
+  .footer-info p {
+      color: #0c0620;
+      font-size: 0.82rem;
+      line-height: 1.9;
+      margin: 0;
+      opacity: 0.8;
+  }
+
+  .footer-info a{
+    color: #5271ff;
+  }
+
+  /*Simbolos redes sociais */
+  .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 1px;
+  }
+
+  .footer-social a {
+      color: #0c0620;
+      text-decoration: none;
+  }
+
+  .footer-social a:hover {color:#5271ff}
+
+
+  /* Responsivo */
+  @media (max-width: 900px) {
+    .dtec-bloco, 
+    .dtec-bloco.invertido {
+      flex-direction: column;
+    }
+    
+    .dtec-img, 
+    .dtec-galeria {
+      flex: none;
+      width: 100%;
+    }
+    
+    .dtec-galeria {
+      justify-content: center;
+    }
+    
+    .dtec-galeria img {
+      max-width: 200px;
+    }
+  }
+
+  @media (max-width: 768px) {
+  .menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #0c0670;
+      border: 2px solid #ecc440;
+      flex-direction: column;
+      padding: 20px;
+      border-radius: 8px;
+      gap: 20px;
+      z-index: 20;
+    }
+
+    .menu a {
+      color: #e6e6e6;
+    }
+
+    .menu a:hover, .menu a.ativo {
+      color: #ecc440;
+    }
+
+    .menu-mobile::before,
+    .menu-mobile::after {
+      background: #0c0620;
+    }
+
+    .menu-mobile::before {
+      box-shadow: 0 9px 0 #0c0620;
+    }
+
+    .menu.ativo {
+      display: flex;
+    }
+
+    .menu-mobile {
+      display: block;
+    }
+
+    .header-dtec .container {
+      height: 60px;
+       display: flex;
+  align-items: center;
+      position: relative;
+    }
+    
+    .dtec-conteudo h2 {
+      font-size: 22px;
+    }
+    
+    .dtec-destaque h3 {
+      font-size: 20px;
+    }
+      footer .container {
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .footer-left{
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+    }
+
+    .footer-social{
+      justify-content: center;
+    }
+  }
+
+  @keyframes moverHorizontal {
+    from {
+      left: -60px;
+    }
+    to {
+      left: 100%;
+    }
+  }
+.topo-fixo {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header-dtec {
+  margin: 0;
+  padding: 0;
+}
