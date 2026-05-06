@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notícias - RAITec</title>
     <link rel="stylesheet" href="noticias.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body class="dtec">
@@ -110,16 +111,86 @@
         </section>
     </div>
 
-    
-    <script>
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
+      <footer>
+    <div class="container">
+        <div class="footer-left">
+        <img src="imagens/logo-footer.png" alt="RAITEC" class="footer-brand">
+      <div class="footer-info">
+        <p>© 2025 RAITEC — Todos os direitos reservados.</p>
+        <p>Contato: <a href="mailto:raitec@ufc.br">raitec@ufc.br</a></p>
+        </div>
+    </div>
+      <div class="footer-social">
+      <a href="https://www.facebook.com/raitec.ufc/" title="Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://br.linkedin.com/company/raitec-ufc" title="LinkedIn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://youtube.com/@rautecufc9945?si=SKym-AyV26X9_il" title="YouTube">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0b1228"/></svg>
+      </a>
+      <a href="https://www.instagram.com/raitec.ufc/" title="Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
 
-        function mudarSlide(n) {
-            slides[slideIndex].classList.remove('active');
-            slideIndex = (slideIndex + n + slides.length) % slides.length;
-            slides[slideIndex].classList.add('active');
-        }
+    </div>
+  </footer>
+
+
+    <script src="script.js">
+  // Menu mobile
+  const btnMobile = document.querySelector('.menu-mobile');
+  const menu = document.querySelector('.menu');
+
+  btnMobile.addEventListener('click', () => {
+    menu.classList.toggle('ativo');
+    btnMobile.classList.toggle('ativo');
+  });
+
+  // Fecha ao clicar no link
+  document.querySelectorAll('.menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('ativo');
+      btnMobile.classList.remove('ativo');
+    });
+  });
+
+  // Fecha clicando fora
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) &&!btnMobile.contains(e.target)) {
+      menu.classList.remove('ativo');
+      btnMobile.classList.remove('ativo');
+    }
+  });
+
+  // Carrossel
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function mudarSlide(n) {
+    slides[slideIndex].classList.remove('active');
+    slideIndex = (slideIndex + n + slides.length) % slides.length;
+    slides[slideIndex].classList.add('active');
+  }
+
+  // Auto-play + swipe no mobile
+  setInterval(() => mudarSlide(1), 5000);
+
+  // Swipe pro carrossel no mobile
+  let startX = 0;
+  const carrossel = document.querySelector('.carrossel');
+
+  carrossel.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+
+  carrossel.addEventListener('touchend', e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) mudarSlide(1); // Swipe esquerda
+    if (endX - startX > 50) mudarSlide(-1); // Swipe direita
+  });
     </script>
 </body>
 </html>

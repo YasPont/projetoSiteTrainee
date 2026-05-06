@@ -135,7 +135,7 @@ header .container {
 .prev { left: 0; }
 .next { right: 0; }
 
-/* Lista de Notícias Abaixo */
+/* Lista de Notï¿½cias Abaixo */
 .feed-noticias {
     padding: 60px 80px;
     display: flex;
@@ -184,4 +184,50 @@ header .container {
     margin: 0;
     color: #666;
     line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  header.container {
+    height: 60px;
+    position: relative;
+  }
+
+.logo {
+    height: 35px;
+  }
+
+.carrossel {
+    height: 280px;
+  }
+
+.legenda {
+    bottom: 20px;
+    left: 20px;
+    font-size: 18px;
+    right: 20px;
+  }
+
+.btn-nav {
+    padding: 10px;
+    font-size: 18px;
+    margin: 0 10px;
+  }
+
+.feed-noticias {
+    padding: 30px 20px;
+  }
+
+.card-noticia {
+    flex-direction: column;
+  }
+
+.thumb {
+    width: 100%;
+    height: 180px;
+  }
+
+.card-noticia:hover {
+    transform: none;
+  }
 }
