@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias - RAITec</title>
+    <link rel="stylesheet" href="noticias.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="dtec">
+  <header>
+    <div class="container">
+      <img src="imagens/logo.png" alt="RAITEC" class="logo">
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">INÍCIO</a></li>
+          <li><a href="noticias.html">NOTÍCIAS</a></li>
+          <li><a href="projetos.html">PROJETOS</a></li>
+          <li><a href="dtec.html">DTEC</a></li>
+          <li><a href="sobre.html">SOBRE</a></li>
+          <li><a href="#">LOGIN</a></li>
+        </ul>
+        <button class="menu-mobile" aria-label="Abrir menu"></button>
+      </nav>
+    </div>
+  </header>
+
+        <!-- Carrossel de Imagens -->
+        <section class="carrossel">
+            <div class="slides">
+                <!-- Imagem 1 -->
+                <div class="slide active">
+                    <img src="slide1.jpg" alt="Notícia 1">
+                    <div class="legenda"> Inovação tecnológica na UFC</div>
+                </div>
+                <!-- Imagem 2 -->
+                <div class="slide">
+                    <img src="imagens/reunião.jpg" alt="Notícia 2">
+                    <div class="legenda"> Projetos de Extensão 2026</div>
+                </div>
+                <!-- Imagem 3 -->
+                <div class="slide">
+                    <img src="imagens/avanco.jpeg" alt="Notícia 3">
+                    <div class="legenda"> Avanços do semestre</div>
+                </div>
+                <!-- Imagem 4 -->
+                <div class="slide">
+                    <img src="imagens/novos_menbros.jpg" alt="Notícia 4">
+                    <div class="legenda"> Novos membros do RAITec</div>
+                </div>
+                <!-- Imagem 5 -->
+                <div class="slide">
+                    <img src="imagens/parceiros.jpeg" alt="Notícia 5">
+                    <div class="legenda"> Parcerias do Raitec</div>
+                </div>
+            </div>
+            
+            <!-- Botões do Carrossel -->
+            <button class="btn-nav prev" onclick="mudarSlide(-1)">&#10094;</button>
+            <button class="btn-nav next" onclick="mudarSlide(1)">&#10095;</button>
+        </section>
+
+        <!-- Lista de Notícias (Feed) -->
+        <section class="feed-noticias">
+            
+            <article class="card-noticia">
+                <img src="imagens/apresentacao.jpeg" class="thumb">
+                <div class="info">
+                    <span class="data">07 MAI 2026</span>
+                    <h3>Dia da apresentação do site</h3>
+                    <p>o Jessé vai gostar ou amar? </p>
+                </div>
+            </article>
+
+            <article class="card-noticia">
+                <img src="imagens/reuniãogeral.jpeg" class="thumb">
+                <div class="info">
+                    <span class="data">08 MAI 2026</span>
+                    <h3>Avanços no Trainee, Reunião Geral!</h3>
+                    <p>Reunião geral glr, bora!</p>
+                </div>
+            </article>
+
+            <article class="card-noticia">
+                <img src="imagens/sera.jpeg" class="thumb">
+                <div class="info">
+                    <span class="data">07 MAI 2026</span>
+                    <h3>Não sei, to perdendo a criatividade</h3>
+                    <p>É sério...</p>
+                </div>
+            </article>
+
+            <article class="card-noticia">
+                <img src="imagens/aqui.jpeg" class="thumb">
+                <div class="info">
+                    <span class="data">07 MAI 2026</span>
+                    <h3>Enfim, espero que tenha gostado</h3>
+                    <p>Tem um bom potencial, tem não?</p>
+                </div>
+            </article>
+
+            <article class="card-noticia">
+                <img src="imagens/aaaa.jpeg" class="thumb">
+                <div class="info">
+                    <span class="data">07 MAI 2026</span>
+                    <h3>Será que vcs estão lendo?</h3>
+                    <p>Se leu até aqui me avisa, quero saber kkkkk</p>
+                </div>
+            </article>
+        </section>
+    </div>
+
+    
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function mudarSlide(n) {
+            slides[slideIndex].classList.remove('active');
+            slideIndex = (slideIndex + n + slides.length) % slides.length;
+            slides[slideIndex].classList.add('active');
+        }
+    </script>
+</body>
+</html>
