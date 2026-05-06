@@ -17,7 +17,6 @@ links.forEach(link => {
   }
 });
 
-
   // Fecha clicando fora
   document.addEventListener('click', (e) => {
     if (!menu.contains(e.target) &&!btnMobile.contains(e.target)) {
